@@ -14,7 +14,7 @@ import datetime as dt
 import random
 
 MY_EMAIL = "korabmtest@gmail.com"
-PSW = "htjgwqutatyiknog"
+PASSWORD = "htjgwqutatyiknog"
 
 data = pandas.read_csv("birthdays.csv")
 now = dt.datetime.now()
@@ -32,7 +32,7 @@ if today_tuple in birthday_dict:
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
-        connection.login(MY_EMAIL, PSW)
+        connection.login(MY_EMAIL, PASSWORD)
         connection.sendmail(
             from_addr=MY_EMAIL,
             to_addrs=birthday_person.email,
